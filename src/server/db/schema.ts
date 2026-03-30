@@ -389,3 +389,6 @@ export const SandboxSettings = pgTable('sandbox_settings', {
     allowLocalBinding: boolean('allow_local_binding').default(true).notNull(),
     ...dbBaseModel,
 });
+
+// Note: RX OS Engagement tables are in Supabase, not local PGlite
+// See src/server/supabase/index.ts for types

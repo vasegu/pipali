@@ -13,6 +13,7 @@ import openapi from './openapi';
 import automations from './automations';
 import mcp from './mcp';
 import auth from './auth';
+import engagements from './engagements';
 
 import { getDefaultUser } from '../utils';
 import { atifConversationService } from '../processor/conversation/atif/atif.service';
@@ -895,5 +896,8 @@ api.route('/', openapi);
 
 // Mount the auth router
 api.route('/auth', auth);
+
+// Mount the engagements router (RX OS)
+api.route('/engagements', engagements);
 
 export default api;

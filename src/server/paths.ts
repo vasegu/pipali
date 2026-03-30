@@ -142,3 +142,22 @@ export function getSkillsDir(): string {
     }
     return path.join(os.homedir(), '.pipali', 'skills');
 }
+
+/**
+ * Get the skill cache directory path
+ * Used to cache cloned skill repositories
+ */
+export function getSkillCachePath(): string {
+    return path.join(getAppCacheDir(), 'skill-repos');
+}
+
+/**
+ * Get the engagements directory path
+ * Each engagement gets its own subdirectory with skills, data, and reports
+ */
+export function getEngagementsPath(): string {
+    if (process.env.PIPALI_ENGAGEMENTS_DIR) {
+        return process.env.PIPALI_ENGAGEMENTS_DIR;
+    }
+    return path.join(getAppDataDir(), 'engagements');
+}
